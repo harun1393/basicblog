@@ -1,0 +1,6 @@
+{% extends "blog/base.html" %}
+	{% block sidebar %}
+	{% for post in recent-post %}
+	<h4>{{ post.title }}</h4>
+<p>Amar sidebar</p>
+	{% endblock %}

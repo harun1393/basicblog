@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+
+    {% block content %}
+
+            <div class="thumbnail">
+                <img src="/media/{{post.photo }}" >
+                <div class="caption">
+                    <h2><b>{{ post.title }}</b></b></h2>
+                    <p><b>Posted on:</b>{{ post.date }}</p>
+
+                </div>
+                <p>{{post.description }}</p>
+            </div>
+
+{% endblock %}

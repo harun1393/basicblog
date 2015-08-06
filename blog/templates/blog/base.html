@@ -6,6 +6,7 @@
     <style></style>
   </head>
   <body>
+  {% load blog_template %}
   <div class="container" id="content">
     <div class="jumbotron">
       <h1>Harun Or Rashid</h1>
@@ -15,24 +16,34 @@
           <div class="container-fluid">
             <div class="navbar-header">
                 <ul class="nav nav-pills">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Profile</a></li>
+                  <li class="active"><a href="{% url 'home'%}">Home</a></li>
+                  <li><a href="">Profile</a></li>
                   <li><a href="#">Messages</a></li>
                 </ul>
-              </a>
+
             </div>
           </div>
         </nav>
         <div class="alert alert-info" role="alert"><h3 class="text-center">Blog</h3></div>
-      {% block content %}{% endblock %}
-
-      <div class="panel panel-default">
+        
+        <div class="panel panel-default">
           <div class="panel-body">
+        
+        <div class="row">
+			<div class="col-md-8">
+				{% block content %}{% endblock %}
+			</div>
+    <!-- sidebar ------------>
+			<div class="col-md-4">
 
+                      {% get_sidebar %}
+
+            </div>
+        </div>
           </div>
-          <div class="panel-footer">Design and developed by <b>Harun Or Rashid</b></div>
-    </div>
 
-  </div>
+        </div>
+      <div class="panel-footer">Design and developed by <b>Harun Or Rashid</b></div>
+      </div>
   </body>
 </html>

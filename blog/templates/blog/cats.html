@@ -1,0 +1,27 @@
+{% if posts %}
+
+    <div class="list-group">
+        <h3>Latest Post</h3>
+        {% for post in posts %}
+        <button type="button" class="list-group-item"><a href="/blog/{{post.slug }}"> {{post.title }}</a></button>
+              {% endfor %}
+
+
+{% else %}
+     <strong >There are no Posts present.</strong>
+        </div>
+{% endif %}
+
+
+{% if cats %}
+    <div class="list-group">
+        <h3>Categories</h3>
+    {% for c in cats %}
+        <button type="button" class="list-group-item"><a href="{% url 'category'  c.slug %}">{{ c.name }}</a></button>
+    {% endfor %}
+
+{% else %}
+    <strong >There are no category present.</strong>
+
+    </div>
+{% endif %}
